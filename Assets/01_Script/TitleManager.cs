@@ -9,6 +9,9 @@ public class TitleManager : MonoBehaviour
 
     [SerializeField] Fade _fade;
 
+    [SerializeField] AudioSource _audio;
+    [SerializeField] AudioClip _clip;
+
     public bool _isStartSelected;
     float time;
 
@@ -36,6 +39,8 @@ public class TitleManager : MonoBehaviour
             _eAnim = true;
             _sAnim = false;
             _startButton.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
+            _audio.PlayOneShot(_clip);
         }
         if(Input.GetKeyDown(KeyCode.LeftArrow))
 		{
@@ -45,6 +50,8 @@ public class TitleManager : MonoBehaviour
             _sAnim = true;
             _eAnim = false;
             _endButton.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
+            _audio.PlayOneShot(_clip);
         }
 
         if(Input.GetKeyDown(KeyCode.Return))
