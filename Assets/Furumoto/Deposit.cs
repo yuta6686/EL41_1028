@@ -12,6 +12,7 @@ public class Deposit : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Player>().Adhesion(mass, transform);
+            Destroy(transform.GetComponent<Rigidbody>());
         }
     }
 }
